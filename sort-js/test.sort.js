@@ -9,4 +9,9 @@ arr = [1,4,3,2,6,7,9,5];
 console.log("before sort:", arr);
 Sort.select(arr,(a, b)=>a < b);
 console.log("after sort:", arr);
+// insert 
+arr = [1,4,3,2,6,7,9,5];
+console.log("before sort:", arr);
+Sort.insert(arr,(a, b)=>a > b);
+console.log("after sort:", arr);
 

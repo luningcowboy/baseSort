@@ -34,5 +34,19 @@ Sort.select = (arr, call)=>{
     }
 };
 
-Sort.insert = (arr, call)=>{};
+Sort.insert = (arr, call)=>{
+    if(!_isArray(arr)) return;
+    call = call || _defaultCall;
+    let preIdx = 0, cur = 0;
+    let len = arr.length;
+    for(let i = 1; i < len; ++i){
+        preIdx = i - 1;
+        cur = arr[i];
+        while(preIdx >= 0 && call(arr[preIdx], cur)){
+            arr[preIdx+1] = arr[preIdx];
+            preIdx--;
+        }
+        arr[preIdx + 1] = cur;
+    }
+};
 module.exports = Sort;
