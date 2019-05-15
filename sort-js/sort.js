@@ -49,4 +49,45 @@ Sort.insert = (arr, call)=>{
         arr[preIdx + 1] = cur;
     }
 };
+
+Sort.shell = (arr, call)=>{
+    if(!_isArray(arr)) return;
+    call = call || _defaultCall;
+
+};
+
+function _merge(left, right, call){
+    let ret = [];
+    console.log('_merge start =>', left, right);
+    while(left.length && right.length){
+        if(call(left[0], right[0])) {
+        //if(left[0] < right[0]) {
+            ret.push(left.shift());
+            console.log('_merge 1');
+        }
+        else {
+            ret.push(right.shift());
+            console.log('_merge 2');
+        }
+    }
+    while(left.length) {
+        ret.push(left.shift());
+        console.log('_merge 3');
+    }
+    while(right.length) {
+        ret.push(right.shift());
+        console.log('_merge 4');
+    }
+    console.log('_merge end =>', ret);
+    return ret;
+}
+Sort.merge = (arr, call)=>{
+    call = call || _defaultCall;
+    let len = arr.length;
+    if(len < 2) return arr;
+    let mid = Math.floor(len / 2),
+        left = arr.slice(0, mid),
+        right = arr.slice(mid);
+    return _merge(Sort.merge(left), Sort.merge(right), call);
+};
 module.exports = Sort;

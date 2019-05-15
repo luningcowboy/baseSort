@@ -15,6 +15,6 @@ function shellSort(arr){
     }
 }
 let arr = [1,4,3,2,6,7,9,5];
-console.log("before sort:", arr);
+console.log("shell before sort:", arr);
 shellSort(arr);
-console.log("after sort:", arr);
+console.log("shell after sort:", arr);
