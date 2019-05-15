@@ -60,6 +60,7 @@ function _merge(left, right, call){
     let ret = [];
     console.log('_merge start =>', left, right);
     while(left.length && right.length){
+        //?? 直接对比两个值可以，通过函数对比有问题
         if(call(left[0], right[0])) {
         //if(left[0] < right[0]) {
             ret.push(left.shift());
