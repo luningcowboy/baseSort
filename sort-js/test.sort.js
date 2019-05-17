@@ -23,3 +23,8 @@ arr = Sort.merge(arr,(a, b)=>{
 );
 console.log("after sort:", arr);
 
+// quick 
+arr = [1,4,3,2,6,7,9,5];
+console.log("before quick sort:", arr);
+arr = Sort.quick(arr);
+console.log("after quick sort:", arr);
