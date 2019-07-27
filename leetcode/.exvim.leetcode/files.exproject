@@ -1,0 +1,11 @@
+" Press <F1> for help
+
+-[F]leetcode {
+ |-[F]array {
+ | |-01_array.js
+ | |-01_array.py
+ | |-index.md }
+ |
+ |-leetcode.exvim }
+
+
