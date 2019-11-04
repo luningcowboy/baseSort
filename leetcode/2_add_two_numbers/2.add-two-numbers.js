@@ -40,10 +40,8 @@ var addTwoNumbers = function(l1, l2) {
 	let sum = 0;
 	let cur = out;
 	while (l1 || l2) {
-		v1 = l1.value;
-		v2 = l2.value;
-		l1 = l1.next || null;
-		l2 = l2.next || null;
+		v1 = l1.value || 0;
+		v2 = l2.value || 0;
 		sum = v1 + v2 + carry;
 		carry = parseInt(sum / 10);
 		let n = new ListNode(sum % 10);
@@ -52,6 +50,8 @@ var addTwoNumbers = function(l1, l2) {
 			cur = n;
 			out = n;
 		}
+		l1 = l1.next || null;
+		l2 = l2.next || null;
 	}
 	if (carry > 0) {
 		let n = new ListNode(carry%10);
