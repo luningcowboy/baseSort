@@ -6,7 +6,6 @@
 # File Name: 001_math.py
 # Description:
 """
-import pytest
 
 # 闰年判断
 # 是4的公倍数并且不是100的公倍数的为闰年
