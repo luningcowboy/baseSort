@@ -13,3 +13,10 @@
 def isLeapYear(year):
     return (not year % 400) or (not year % 4 and year % 100)
 
+# 找零钱
+def mod(money):
+    cent = int(money * 100)
+    all_cent = {25: 0, 10: 0, 5: 0, 1: 0}
+    for k in all_cent:
+        all_cent[k], cent = divmod(cent, k)
+    return all_cent
