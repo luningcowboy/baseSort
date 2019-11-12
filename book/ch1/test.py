@@ -13,3 +13,6 @@ def test_isLeapYear():
     assert math.isLeapYear(2000)
     assert math.isLeapYear(1000) == False
     assert math.isLeapYear(400)
+
+def test_fibonacci():
+    assert math.fibonacci(1) == [1]
