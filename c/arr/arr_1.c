@@ -1,20 +1,21 @@
 #include <stdio.h>
 #include <stdlib.h>
-struct Table{
+typedef struct Table{
     int * head;
     int length;
     int size;
 }table;
+#define Size 5
 
-table initArray(int size){
+table initArray(){
     table arr;
-    arr.head = (int *)malloc(szie * sizeof(int));
+    arr.head = (int *)malloc(Size * sizeof(int));
     if(!arr.head){
-        printf("initArray failed.")
+        printf("initArray failed.");
         exit(0);
     }
     arr.length = 0;
-    arr.size = size;
+    arr.size = Size;
     return arr;
 }
 void displayArray(table arr){
@@ -24,7 +25,7 @@ void displayArray(table arr){
     printf("\n");
 }
 int main(){
-    table arr = initArray(10);
+    table arr = initArray();
     for(int i = 0; i < 10; i++){
         arr.head[i] = (i + 1) * 10;
         arr.length++;
