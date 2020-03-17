@@ -57,6 +57,7 @@ table insertTable(table t, int elem, int pos){
 table delTable(table t, int pos){
     // 1. 进行位置判断
     // 2. 找到制定位置，直接平移数组
+    // 3. 修改数组长度
     if(pos < 1 || pos > t.length){
         printf("删除位置错误\n");
         return t;
